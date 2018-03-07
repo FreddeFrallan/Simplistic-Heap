@@ -55,7 +55,7 @@ void initHeapMemory(){
 
 
 //********** Allocation **********
-// Takes in the desired allocated size, and returns a pointer to the start of the allocated area
+// Takes in the desired allocation size, and returns a pointer to the start of the allocated area
 // 
 // First we check the size can fit into one sequential area of the heap,
 // if not, we return NULL (Throw an error)
