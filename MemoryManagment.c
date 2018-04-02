@@ -64,7 +64,11 @@ void initHeapMemory(){
 
 //********** Allocation **********
 // Takes in the desired allocation size, and returns a pointer to the start of the allocated area
+<<<<<<< HEAD
 //
+=======
+// 
+>>>>>>> 6380ed335bec9d6597bf3a3ef741a28aae88b05f
 // First we check the size can fit into one sequential area of the heap,
 // if not, we return NULL (Throw an error)
 //
@@ -311,6 +315,15 @@ void memCopy(void* from, int byteSize, void* target){
 }
 
 
+<<<<<<< HEAD
 void* getHeapStart(){
     return (void*)heap;
+=======
+int getFreeListSize(){return iterateFreeListSize(freeList);}
+int iterateFreeListSize(FreeBlock* node){
+	if(node->hasNext)
+		return node->block.size + iterateFreeListSize((FreeBlock*)node->next);
+	else
+		return node->block.size;
+>>>>>>> 6380ed335bec9d6597bf3a3ef741a28aae88b05f
 }
