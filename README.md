@@ -6,7 +6,7 @@ Can become useful if you find yourself working in an evironment that only suppor
 
 ## Getting Started
 
-To make use of this heap simply copy the files into your project.
+To make use of this heap simply copy the files into your project and include the "HeapManager.h" file.
 You then have some options that you can tinker with.
 
 1. Heap Size:
@@ -14,8 +14,13 @@ You then have some options that you can tinker with.
 
 2. Error functions
     There exists a separate file named <b>MemoryErrorManager.c</b>, in this file you can specify what will happen when the heap manager throws an error.
+    
+3. Call the <b>initHeapMemory</b> function before using any of the functionalities.
 
-3. Have fun with your staticly implemented malloc and free.
+4. Have fun with your staticly implemented malloc and free.
+
+
+For additional instructions see the <b>Demo.c</b> file.
 
 ### Prerequisites
 
