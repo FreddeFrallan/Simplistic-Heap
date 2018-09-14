@@ -1,7 +1,6 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "MemoryManagment.h"
-#include "AlbotProtocol2.h"
 #include "MemoryErrorManager.h"
 
 // Allocation
@@ -83,7 +82,6 @@ void* Malloc(int size){
 
     if(searchFreeList(freeList,findFreeBlock, &foundFreeBlock, size) == false){
         throwFoundNoMatchingFreeBlock();
-        SimulatePass();
         return NULL; //We did not manage to allocate *Throw Error*
     }
 
@@ -150,12 +148,13 @@ void Free(void* addr){
         throwNotYetInit();
         return;
     }
-    //**** Albot.Online debugging ****
-   // DataBlock* targetBlock = addr;
-   // FreeBlock* tempBlock = addr;
 
-    DataBlock* targetBlock = addr-blockSize;
-    FreeBlock* tempBlock = addr-blockSize;
+    //It seems some compilers don't like the command:
+    //      DataBlock* targetBlock = addr-blockSize;
+    //So to counter this we cast it to a char* first
+
+    DataBlock* targetBlock = ((char*)addr)-blockSize;
+    FreeBlock* tempBlock = ((char*)addr)-blockSize;
     if(targetBlock->magicNumber != MAGIC_BLOCK_NUMBER || tempBlock->magicNumberFree == MAGIC_BLOCK_NUMBER2){
         throwFreeNonAllocatedSpace();
         return;
