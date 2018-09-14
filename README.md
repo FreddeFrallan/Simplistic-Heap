@@ -6,7 +6,7 @@ Can become useful if you find yourself working in an evironment that only suppor
 
 ## Getting Started
 
-To make use of this heap simply copy the files into your project and include the "HeapManager.h" file.
+To make use of this heap simply copy the files into your project and include the "MemoryManagment.h" file.
 You then have some options that you can tinker with.
 
 1. Heap Size:
@@ -14,10 +14,13 @@ You then have some options that you can tinker with.
 
 2. Error functions
     There exists a separate file named <b>MemoryErrorManager.c</b>, in this file you can specify what will happen when the heap manager throws an error.
-    
-3. Call the <b>initHeapMemory</b> function before using any of the functionalities.
 
-4. Have fun with your staticly implemented malloc and free.
+
+Once your happy with your heap settings:
+
+1. Call the <b>initHeapMemory</b> function before using any of the functionalities.
+
+2. Have fun with your staticly implemented malloc and free.
 
 
 For additional instructions see the <b>Demo.c</b> file.
@@ -35,7 +38,7 @@ This is done by adding the <b>-std=c99</b> flag when you compile.
 
 ## Versioning
 
-  1.0
+  1.1
   
 ## Authors
 
