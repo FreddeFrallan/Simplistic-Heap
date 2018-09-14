@@ -20,7 +20,7 @@ Once your happy with your heap settings:
 
 1. Call the <b>initHeapMemory</b> function before using any of the functionalities.
 
-2. Have fun with your staticly implemented malloc and free.
+2. Have fun with your staticly implemented Malloc and Free.
 
 
 For additional instructions see the <b>Demo.c</b> file.
